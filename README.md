@@ -15,7 +15,7 @@ a functional keystone system must be running and the cors config must allow the 
 the file `.keystone/config.js` must be changed 
 
 from
-`var keystone_default = (0, import_core2.config)({
+```var keystone_default = (0, import_core2.config)({
     db: {
         provider: "sqlite",
         url: process.env.DATABASE_URL || "file:./keystone-example.db",
@@ -23,10 +23,11 @@ from
         ...fixPrismaPath
     },
     lists
-});`
+});
+```
 
 to
-`var keystone_default = (0, import_core2.config)({
+```var keystone_default = (0, import_core2.config)({
     server: {
         cors: { origin: ["http://localhost:3001"], credentials: true },
             port: 3001,
@@ -42,4 +43,5 @@ to
         ...fixPrismaPath
     },
     lists
-});`
+});
+```
