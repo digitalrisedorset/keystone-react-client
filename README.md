@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 `npm install`
 `npm install @apollo/client`
+`npm install styled-components`
 
 ## start the client
 `npm start`
