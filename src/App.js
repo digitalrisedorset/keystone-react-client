@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Attributes from "./components/attributes";
 import CreateAttribute from "./components/create-attribute";
+import CreateListAttribute from "./components/create-list-attributes";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         </a>
       </header>
       <Attributes />
+      <CreateListAttribute />
       <CreateAttribute />
     </div>
   );
