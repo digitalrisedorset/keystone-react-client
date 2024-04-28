@@ -45,17 +45,12 @@ export default function CreateListAttribute() {
         try {
             const ourRequest = Axios.CancelToken.source()
             const res = await Axios.get('http://localhost:8080/getWoocommerceAttributeList', { cancelToken: ourRequest.token });
-            let list = []
-            // eslint-disable-next-line array-callback-return
-            {res.data.map(attribute => {
-                list.push({
-                    code: attribute.slug,
-                    name: attribute.name,
-                    type: 'select',
-                    required: false
-                })
-            })}
-            setAttributeListState(list)
+            setAttributeListState(res.data.map(attribute => ({
+                code: attribute.slug,
+                name: attribute.name,
+                type: 'select',
+                required: false
+            })))
             ourRequest.cancel()
         } catch (e) {
             console.log('error');
